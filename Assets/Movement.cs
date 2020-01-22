@@ -5,8 +5,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 2.0f;
+    private float speed = 1.0f;
     public float jumpForce = 2.0f;
+    private string playerName = "Bob";
 
     // Start is called before the first frame update
     void Start()
