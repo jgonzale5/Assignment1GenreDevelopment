@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    //public GameObject managerObject;
-    //private ManagerScript manager;
-
-    //private void Start()
-    //{
-    //    manager = managerObject.GetComponent<ManagerScript>();
-    //}
-
     // Update is called once per frame
     void Update()
     {
         if (ManagerScript.Instance.playerLives <= 0)
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            //manager.playerLives--;
+            ManagerScript.Instance.playerLives--;
         }
     }
 }
